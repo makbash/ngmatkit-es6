@@ -1,0 +1,9 @@
+logs/*
+node_modules/
+bower_components/
+app/jspm_packages
+tmp
+.DS_Store
+.idea
+!.gitkeep
+/nbproject/

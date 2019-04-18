@@ -1,0 +1,21 @@
+<h2>Examples</h2>
+
+<div layout="column" layout-gt-md="row">
+    <div flex>
+        <h4>Selected fruit</h4>
+        <hr/>
+        <fruit-detail
+            selected="selected">
+        </fruit-detail>
+    </div>
+    <div flex>
+        <h4>Fruits List</h6>
+            <hr/>
+            <fruit-list
+                fruits="fruits"
+                selected="selected"
+                on-selected="selectFruit(fruit)">
+            </fruit-list>
+    </div>
+</div>
+

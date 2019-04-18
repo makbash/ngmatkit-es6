@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>AngularJS Material - Starter App</title>
+    <meta name="description" content=""/>
+
+    <base href="http://nodekit.loc/es6-mat-kit/app/"/>
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css" />
+    <link rel="stylesheet" href="./assets/app.css"/>
+</head>
+
+<body ng-cloak layout="column" ng-controller="AppController as app">
+
+    <!-- Container #1 (see wireframe) -->
+<md-toolbar layout="row" class="md-toolbar-tools">
+    <md-button class="menu md-icon-button" ng-click="app.toggleLeft()"
+               aria-label="Show User List">
+        <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <h1><span>Menu</span></h1>
+</md-toolbar>
+
+<!-- Container #2 -->
+<div flex layout="row">
+
+    <!-- Container #3 -->
+    <md-sidenav class="md-whiteframe-4dp" md-component-id="left" md-is-locked-open="app.lockedLeft" md-disable-backdrop>
+        <md-list>
+            <md-list-item ng-repeat="item in app.sidenav" ng-if="item.title && item.url">
+                <md-button ng-href="#!{{item.url}}" layout="row" flex layout-align="start">
+                    <md-icon style="text-align:left" flex="15">{{item.icon}}</md-icon>
+                    <span style="text-align:left" flex>{{item.title}}</span>
+                </md-button>
+            </md-list-item>
+        </md-list>
+
+        <!-- Custom UsersList component -->
+        <users-list
+            users="app.users"
+            selected="app.selected"
+            on-selected="app.selectUser(user)">
+        </users-list>
+    </md-sidenav>
+
+    <!-- Container #4 -->
+    <md-content flex id="content">
+
+        <ui-view></ui-view>
+
+    </md-content>
+
+</div>
+
+<script src="./jspm_packages/system.js" type="text/javascript"></script>
+<script src="config.js" type="text/javascript"></script>
+<script type="text/javascript">
+                                // make sure any errors print to console
+                                System.import('src/boot/boot').catch(console.error.bind(console));
+</script>
+
+</body>
+</html>

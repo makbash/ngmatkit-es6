@@ -1,0 +1,19 @@
+<h2>Users</h2>
+
+<div layout="column" layout-gt-md="row">
+    <div flex>
+        <h4>User list : </h4>
+        <hr/>
+        <ul>
+            <li ng-repeat="person in $ctrl.users">
+                <a ui-sref-active="active" ui-sref="users.person({ personId: person.id })">
+                    {{person.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div flex>
+        <ui-view></ui-view>
+    </div>
+</div>
+
