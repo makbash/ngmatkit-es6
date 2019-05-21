@@ -31,13 +31,13 @@
 </md-toolbar>
 
 <!-- Container #2 -->
-<div flex layout="row">
+<div flex layout="row" class="posr">
 
-    <!-- Container #3 -->
-    <md-sidenav class="md-whiteframe-4dp" md-component-id="left" md-is-locked-open="app.lockedLeft" md-disable-backdrop>
+    <!-- Container #3  md-is-locked-open="app.lockedLeft && $mdMedia('min-width: 960px')"  -->
+    <md-sidenav class="md-whiteframe-4dp" md-component-id="left" md-is-locked-open="app.lockedLeft && app.mdScreen" md-disable-backdrop md-disable-close-events>
         <md-list>
-            <md-list-item ng-repeat="item in app.sidenav" ng-if="item.title && item.url">
-                <md-button ng-href="#!{{item.url}}" layout="row" flex layout-align="start">
+            <md-list-item ng-repeat="item in app.routes" ng-if="item.title && item.url">
+                <md-button ng-href="#!{{item.url}}" ng-click="app.closeSideNav()" layout="row" flex layout-align="start">
                     <md-icon style="text-align:left" flex="15">{{item.icon}}</md-icon>
                     <span style="text-align:left" flex>{{item.title}}</span>
                 </md-button>

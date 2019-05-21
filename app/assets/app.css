@@ -12,6 +12,8 @@ html, body {
 
 /* Toolbar area */
 
+.posr {position: relative;}
+
 .menu {
   background-color: transparent;
   border: none;
