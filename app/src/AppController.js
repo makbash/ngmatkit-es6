@@ -28,7 +28,7 @@ function AppController($scope, $mdSidenav, $mdMedia, $log) {
         // Component lookup should always be available since we are not using `ng-if`
         $mdSidenav('left').close()
                 .then(() => {
-                    $log.debug("close LEFT is done");
+                    $log.debug("close left is done");
                 });
 
     };
