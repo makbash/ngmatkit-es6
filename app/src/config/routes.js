@@ -1,6 +1,7 @@
 
 // An array of state definitions
 const states = [
+    {name: 'login', title: 'Login', icon: 'widgets', url: '/login', component: 'login'},
     {name: 'home', title: 'Homepage', icon: 'home', url: '/home', component: 'home'},
     {name: 'example', title: 'Examples', icon: 'widgets', url: '/example', component: 'example'},
     {name: 'fruits', url: '/fruits', component: 'fruits'},

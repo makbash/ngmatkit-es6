@@ -8,5 +8,8 @@ import angular from 'angular';
 export default angular
         .module("about", ['ngMaterial'])
         .component('about', {
-            template: '<h3>About us</h3>'
+            template: '<h3>About us</h3>',
+            controller: function ($scope) {
+                console.log('About controller');
+            }
         });
