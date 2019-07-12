@@ -1,8 +1,8 @@
 {
-  "name": "material-start",
+  "name": "ngmatkit-es6",
   "private": true,
-  "version": "0.0.4",
-  "description": "A ES6 Tutorial project for AngularJS Material Start",
+  "version": "0.0.5",
+  "description": "AngularJS Material Start with ES6",
   "repository": "https://github.com/makbash/ngmatkit-es6",
   "license": "MIT",
   "jspm": {
