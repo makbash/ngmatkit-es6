@@ -1,6 +1,7 @@
 // Load libraries
 import angular from 'angular';
 
+import '@uirouter/core';
 import 'angular-ui-router';
 import 'angular-animate';
 import 'angular-aria';
