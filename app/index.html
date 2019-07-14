@@ -45,7 +45,7 @@
         <md-sidenav class="md-whiteframe-4dp" md-component-id="left" md-is-locked-open="app.lockedLeft && app.mdScreen"
             md-disable-backdrop md-disable-close-events>
             <md-list>
-                <md-list-item ng-repeat="item in app.routes" ng-if="item.title && item.url">
+                <md-list-item ng-repeat="item in app.routes" ng-if="item.title && item.url && !item.hide">
                     <md-button ng-href="#!{{item.url}}" ng-click="app.closeSideNav()" layout="row" flex
                         layout-align="start">
                         <md-icon style="text-align:left" flex="15">{{item.icon}}</md-icon>
