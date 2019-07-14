@@ -75,12 +75,12 @@ export default angular
                 let publicPages = ['/login'];
                 let restrictedPage = publicPages.indexOf($location.path()) === -1;
                 if (restrictedPage && !$localStorage.currentUser) {
-                     $location.path('/login');
+                    $location.path('/login');
                 }
             });
         })
         .factory('AuthenticationService', ($http, $localStorage, $log) => {
-            var service = {};
+            const service = {};
 
             service.Login = Login;
             service.Logout = Logout;
@@ -90,14 +90,12 @@ export default angular
             function Login(username, password, callback) {
                 $http({
                     method: 'POST',
-                    url: 'http://localhost:3000/api/v1/user/authenticate',
+                    url: 'http://localhost:3000/api/v1/user/authenticateas',
                     data: {
                         userName: username,
                         password: password
                     }
                 }).then((res) => {
-                    $log.info(res.data);
-
                     // login successful if there's a token in the response
                     if (res.data.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
@@ -110,11 +108,17 @@ export default angular
                         callback(true);
                     } else {
                         // execute callback with false to indicate failed login
-                        callback(res.data);
+                        callback({
+                            status: res.data.status,
+                            message: res.data.message
+                        });
                     }
                 }, (err) => {
                     $log.error(err);
-                    callback(res.data);
+                    callback({
+                        status: err.data.status,
+                        message: err.data.data.error
+                    });
                 });
             }
 
