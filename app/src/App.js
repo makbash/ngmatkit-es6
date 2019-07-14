@@ -90,7 +90,7 @@ export default angular
             function Login(username, password, callback) {
                 $http({
                     method: 'POST',
-                    url: 'http://localhost:3000/api/v1/user/authenticateas',
+                    url: 'http://localhost:3000/api/v1/user/authenticate',
                     data: {
                         userName: username,
                         password: password
