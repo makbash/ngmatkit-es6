@@ -7,3 +7,4 @@ tmp
 .idea
 !.gitkeep
 /nbproject/
+debug.log

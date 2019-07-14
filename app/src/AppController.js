@@ -27,9 +27,9 @@ function AppController($scope, $mdSidenav, $mdMedia, $log) {
     self.closeSideNav = () => {
         // Component lookup should always be available since we are not using `ng-if`
         $mdSidenav('left').close()
-                .then(() => {
-                    $log.debug("close left is done");
-                });
+            .then(() => {
+                $log.debug("close left is done");
+            });
 
     };
 
@@ -40,10 +40,10 @@ function AppController($scope, $mdSidenav, $mdMedia, $log) {
             localStorage.setItem('lockedLeft', self.lockedLeft);
         } else {
             $mdSidenav('left')
-                    .toggle()
-                    .then(() => {
-                        $log.debug("toggle left is done");
-                    });
+                .toggle()
+                .then(() => {
+                    $log.debug("toggle left is done");
+                });
         }
     };
 }
