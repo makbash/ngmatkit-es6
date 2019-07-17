@@ -35,6 +35,6 @@
   "scripts": {
     "postinstall": "jspm install",
     "serve": "live-server ./app",
-    "start": "npm run serve"
+    "dev": "npm run serve"
   }
 }

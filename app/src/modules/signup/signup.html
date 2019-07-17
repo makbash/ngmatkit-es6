@@ -1,0 +1,62 @@
+<div layout="column" layout-align="center center">
+    <a target="_self" style="margin: 50px 0 20px 0">
+        <img src="./assets/img/logo.png" class="logo large" alt="" />
+    </a>
+    <md-card class="card-form">
+        <h1 class="md-toolbar-tools">Sign up</h1>
+        <form name="form" class="form-padding" ng-submit="form.$valid && $ctrl.signup()" novalidate>
+            <md-input-container class="md-block">
+                <label>Username</label>
+                <input type="text" name="userName" ng-model="$ctrl.fields.userName" />
+                <div ng-messages="form.userName.$error" class="help-block errors">
+                    <div ng-message="required">Username is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input type="password" name="password" ng-model="$ctrl.fields.password" minlength="8" />
+                <div ng-messages="form.password.$error" class="help-block errors">
+                    <div ng-message="required">Password is required</div>
+                    <div ng-message="minlength">The password must be at least 8 characters in length.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Firstname</label>
+                <input type="text" name="firstName" class="form-control" ng-model="$ctrl.fields.firstName" />
+                <div ng-messages="form.firstName.$error" class="help-block errors">
+                    <div ng-message="required">Firstname is required</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Lastname</label>
+                <input type="text" name="lastName" class="form-control" ng-model="$ctrl.fields.lastName" />
+                <div ng-messages="form.lastName.$error" class="help-block errors">
+                    <div ng-message="required">Lastname is required</div>
+                </div>
+            </md-input-container>
+
+            <div layout="row" class="or-login" layout-align="center center" ng-if="$ctrl.response">
+                <div class="alert alert-{{$ctrl.response.type}}">
+                    <div ng-bind-html="$ctrl.response.text"></div>
+                </div>
+            </div>
+
+            <md-card-actions>
+                <div layout="row">
+                    <md-button type="submit" flex ng-disabled="$ctrl.loading" class="md-raised md-primary btnLoader">
+                        Send
+                        <span class="loader" ng-if="$ctrl.loading"></span>
+                    </md-button>
+                </div>
+
+                <div layout="row" class="or-login" layout-align="center center">
+                    <p>Already have an account? <a href="#!/signin">Login now</a></p>
+                </div>
+
+            </md-card-actions>
+        </form>
+    </md-card>
+</div>

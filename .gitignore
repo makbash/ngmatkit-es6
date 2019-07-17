@@ -8,3 +8,5 @@ tmp
 !.gitkeep
 /nbproject/
 debug.log
+package-lock.json
+.bak

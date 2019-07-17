@@ -1,7 +1,8 @@
 
 // An array of state definitions
 const states = [
-    {name: 'login', title: 'Login', icon: 'widgets', url: '/login', component: 'login', hide:true},
+    {name: 'signin', title: 'Login', icon: 'widgets', url: '/signin', component: 'signin', hide:true},
+    {name: 'signup', title: 'Register', icon: 'widgets', url: '/signup', component: 'signup', hide:true},
     {name: 'home', title: 'Homepage', icon: 'home', url: '/home', component: 'home'},
     {name: 'example', title: 'Examples', icon: 'widgets', url: '/example', component: 'example'},
     {name: 'fruits', url: '/fruits', component: 'fruits'},
