@@ -15,7 +15,7 @@
 
             <md-input-container class="md-block">
                 <label>Password</label>
-                <input type="password" name="password" ng-model="$ctrl.fields.password" minlength="8" />
+                <input type="password" name="password" ng-model="$ctrl.fields.password" />
                 <div ng-messages="form.password.$error" class="help-block errors">
                     <div ng-message="required">Password is required</div>
                     <div ng-message="minlength">The password must be at least 8 characters in length.</div>

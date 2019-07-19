@@ -16,13 +16,7 @@ export default angular
 
             vm.title = 'Home Page Title';
 
-            vm.token = '';
-            if ($localStorage.currentUser) {
-                vm.token = $localStorage.currentUser.token;
-            }
-
             vm.getUserInfo = () => {
-                $http.defaults.headers.common.Authorization = 'Bearer ' + vm.token;
                 $http({
                     method: 'GET',
                     url: 'http://localhost:3000/api/v1/user/profile'
